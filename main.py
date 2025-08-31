@@ -109,8 +109,9 @@ if st.button("送出") and q.strip(): #q.strip()去掉前後的空白 #有按下
         st.info("找不到符合的回覆，請嘗試更換問題或調整信心門檻。")
 
     #展開可能的回答
-    with st.expander("檢索結果：", expanded=True): #一開始不要展開
+    with st.expander("檢索結果：", expanded=False): #一開始不要展開
          st.dataframe(rows[['question', 'answer', 'score']], use_container_width=True) #會根據畫面縮放
+
 
 
 

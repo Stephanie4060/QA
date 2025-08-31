@@ -72,7 +72,7 @@ if do_index or (st.session_state.vectorizer is None): #如果按鈕按下(新增
 # 步驟三：詢問客服
 q = st.text_input("請輸入您的問題：", placeholder="例如：你們的營業時間是？")
 top_k = st.slider("選擇回覆數量", 1, 5, 3) #取得前k筆回答
-c = st.slider("信心門檻", 0.0, 1.0, 0.5, key="c")
+c = st.slider("信心門檻", 0.0, 1.0, 0.2, key="c")
 
 if st.button("送出") and q.strip(): #q.strip()去掉前後的空白 #有按下按鈕且有輸入問題(不是空白)
 #python中空白都是false
@@ -109,8 +109,9 @@ if st.button("送出") and q.strip(): #q.strip()去掉前後的空白 #有按下
         st.info("找不到符合的回覆，請嘗試更換問題或調整信心門檻。")
 
     #展開可能的回答
-    with st.expander("檢索結果：", expanded=False): #一開始不要展開
+    with st.expander("檢索結果：", expanded=True): #一開始不要展開
          st.dataframe(rows[['question', 'answer', 'score']], use_container_width=True) #會根據畫面縮放
+
 
 
 

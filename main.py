@@ -5,7 +5,7 @@ import jieba
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-st.set_page_config(page_title=" യ˚*您最齊全的中文客服檢索回覆*˚യ", page_icon="💡", layout="wide")
+st.set_page_config(page_title=" യ˚*您最齊全的中文客服檢索回覆*˚യ ", page_icon="💡", layout="wide")
 st.title("中文客服檢索回覆")
 
 
@@ -111,6 +111,7 @@ if st.button("送出") and q.strip(): #q.strip()去掉前後的空白 #有按下
     #展開可能的回答
     with st.expander("檢索結果：", expanded=False): #一開始不要展開
          st.dataframe(rows[['question', 'answer', 'score']], use_container_width=True) #會根據畫面縮放
+
 
 
 
